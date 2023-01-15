@@ -1,7 +1,15 @@
+
+
 body{
   background-color: black;
+ 
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
 
 header div {
   width: auto;
@@ -18,16 +26,18 @@ header div {
 .formulaire{
   color: white;
   text-align: center;
-  margin-top: 150px;
+  margin-top: -650px;
   border-style: double;
   border-color: white;
-  width: 550px;
-  height: auto;
-  margin-left: 675px;
+  width: 350px;
+  height: 350px;
+  margin-left: 760px;
+  display: block;
 }
 
 .formulaire label{
   font-size: xx-large;
+  
 }
 
 .formulaire input{
@@ -35,6 +45,7 @@ header div {
   margin-right: 15px ;
   margin-top: 8px;
   padding-right: 100px;
+  
 }
 
 .formulaire select{
@@ -46,10 +57,55 @@ header div {
 
 .go{
   text-align: center;
-  margin-bottom: 15px;
+  width: 150px;
 }
 
-h1{
-  color: white;
+.erreurPair, .erreurNom {
+  color: red;
+  font-size: large;
+  text-decoration: underline;
 }
+
+
+.inputPrenom{
+  margin-bottom: -15px;
+}
+
+section{
+  height: 100vh;
+  width: 100%;
+  margin-top: -115px;
+}
+
+.jeux2{
+  visibility: hidden;
+  color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: -600px;
+}
+
+.jeux{
+  visibility: hidden;
+  color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: -600px;
+}
+
+#nom{
+  text-align: center;
+  margin-top:-50px;
+  font-size: xx-large;
+}
+
+img{
+  width: 96px;
+  height: 96px;
+  margin-right: 10px;
+}
+
+
 
