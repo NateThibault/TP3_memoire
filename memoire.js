@@ -6,6 +6,7 @@ const form = document.getElementById("form")
 const button = document.getElementById("go")
 const erreurNom = document.getElementById("erreurNom")
 const erreurPair = document.getElementById("erreurPair")
+const tableau = document.getElementById("flex")
 
 button.addEventListener("click" , (e) => {
 
@@ -38,124 +39,277 @@ button.addEventListener("click" , (e) => {
 })
 
 
+tableau.style.visibility="hidden" // cacher le tableau de jeux 
 
-
-// TIMER + SUPPRIMER FORMULAIRE 
+// STARTGAME 
 
 function startGame(){
+
     document.getElementById("formulaire").style.display = "none"; // supprimer mon formulaire après validation
     nomJoueur.innerText = "Nom du joueur : " + prenom.value // affiche le nom du joueur
-
-
-    listeImage = [
-        "amazon.png",
-        "bitcoin.png",
-        "github.png",
-        "google.png",
-        "skype.png",
-        "steam.png",
-        "twitch.png",
-        "window.png",
-        "wordpress.png",
-        "youtube.png"
-    ]
-
-    function getRamdomImage(){
-
-
-        randomIndex = Math.floor(Math.random() * listeImage.length)
-        randomIndex2 = Math.floor(Math.random() * listeImage.length)
-        imageGenerer = listeImage[randomIndex]
-        imageGenerer2 = listeImage[randomIndex2]
-        document.getElementById("img1").src = `./img/${imageGenerer} `
-        document.getElementById("img2").src = `./img/${imageGenerer2} `
-        document.getElementById("img3").src = `./img/${imageGenerer} `
-        document.getElementById("img4").src = `./img/${imageGenerer2} `
-    }
+    document.getElementById("nom").style.visibility="visible"
 
 
 
-
-
-
-
-
-
-
-
-    
-    // Afficher la bonne table de jeux selon le nombre de paire entré
+    // Condition nombre de pair
     if(nbPair.value == 2){
-        document.getElementById("jeux2").style.visibility = "visible"
-        getRamdomImage()
-    }   
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+
+        document.getElementById("t5").style.display = "none"
+        document.getElementById("t6").style.display = "none"
+        document.getElementById("t7").style.display = "none"
+        document.getElementById("t8").style.display = "none"
+        document.getElementById("t9").style.display = "none"
+        document.getElementById("t10").style.display = "none"
+        document.getElementById("t11").style.display = "none"
+        document.getElementById("t12").style.display = "none"
+        document.getElementById("t13").style.display = "none"
+        document.getElementById("t14").style.display = "none"
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
+
+        
+
+    }
+
     if(nbPair.value == 3){
-        document.getElementById("jeux2").style.display = "none" //Supprimer la table de jeux #2
-        document.getElementById("jeux3").style.visibility = "visible" // rendre visible la table de jeux #3
-        getRamdomImage()
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("t7").style.display = "none"
+        document.getElementById("t8").style.display = "none"
+        document.getElementById("t9").style.display = "none"
+        document.getElementById("t10").style.display = "none"
+        document.getElementById("t11").style.display = "none"
+        document.getElementById("t12").style.display = "none"
+        document.getElementById("t13").style.display = "none"
+        document.getElementById("t14").style.display = "none"
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+
     if(nbPair.value == 4){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("t9").style.display = "none"
+        document.getElementById("t10").style.display = "none"
+        document.getElementById("t11").style.display = "none"
+        document.getElementById("t12").style.display = "none"
+        document.getElementById("t13").style.display = "none"
+        document.getElementById("t14").style.display = "none"
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+    
     if(nbPair.value == 5){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("t11").style.display = "none"
+        document.getElementById("t12").style.display = "none"
+        document.getElementById("t13").style.display = "none"
+        document.getElementById("t14").style.display = "none"
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+
     if(nbPair.value == 6){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("cell11").innerHTML = nbAleatoire[10]
+        document.getElementById("cell12").innerHTML = nbAleatoire[11]
+        document.getElementById("t13").style.display = "none"
+        document.getElementById("t14").style.display = "none"
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+    
     if(nbPair.value == 7){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.display = "none"
-        document.getElementById("jeux7").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("cell11").innerHTML = nbAleatoire[10]
+        document.getElementById("cell12").innerHTML = nbAleatoire[11]
+        document.getElementById("cell13").innerHTML = nbAleatoire[12]
+        document.getElementById("cell14").innerHTML = nbAleatoire[13]
+        document.getElementById("t15").style.display = "none"
+        document.getElementById("t16").style.display = "none"
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+
     if(nbPair.value == 8){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.display = "none"
-        document.getElementById("jeux7").style.display = "none"
-        document.getElementById("jeux8").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("cell11").innerHTML = nbAleatoire[10]
+        document.getElementById("cell12").innerHTML = nbAleatoire[11]
+        document.getElementById("cell13").innerHTML = nbAleatoire[12]
+        document.getElementById("cell14").innerHTML = nbAleatoire[13]
+        document.getElementById("cell15").innerHTML = nbAleatoire[14]
+        document.getElementById("cell16").innerHTML = nbAleatoire[15]
+        document.getElementById("t17").style.display = "none"
+        document.getElementById("t18").style.display = "none"
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+    
     if(nbPair.value == 9){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.display = "none"
-        document.getElementById("jeux7").style.display = "none"
-        document.getElementById("jeux8").style.display = "none"
-        document.getElementById("jeux9").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("cell11").innerHTML = nbAleatoire[10]
+        document.getElementById("cell12").innerHTML = nbAleatoire[11]
+        document.getElementById("cell13").innerHTML = nbAleatoire[12]
+        document.getElementById("cell14").innerHTML = nbAleatoire[13]
+        document.getElementById("cell15").innerHTML = nbAleatoire[14]
+        document.getElementById("cell16").innerHTML = nbAleatoire[15]
+        document.getElementById("cell17").innerHTML = nbAleatoire[16]
+        document.getElementById("cell18").innerHTML = nbAleatoire[17]
+        document.getElementById("t19").style.display = "none"
+        document.getElementById("t20").style.display = "none"
     }
+
     if(nbPair.value == 10){
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.display = "none"
-        document.getElementById("jeux7").style.display = "none"
-        document.getElementById("jeux8").style.display = "none"
-        document.getElementById("jeux9").style.display = "none"
-        document.getElementById("jeux10").style.visibility = "visible" 
+        tableau.style.visibility="visible"
+        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10]
+        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
+        document.getElementById("cell1").innerHTML = nbAleatoire[0]
+        document.getElementById("cell2").innerHTML = nbAleatoire[1]
+        document.getElementById("cell3").innerHTML = nbAleatoire[2]
+        document.getElementById("cell4").innerHTML = nbAleatoire[3]
+        document.getElementById("cell5").innerHTML = nbAleatoire[4]
+        document.getElementById("cell6").innerHTML = nbAleatoire[5]
+        document.getElementById("cell7").innerHTML = nbAleatoire[6]
+        document.getElementById("cell8").innerHTML = nbAleatoire[7]
+        document.getElementById("cell9").innerHTML = nbAleatoire[8]
+        document.getElementById("cell10").innerHTML = nbAleatoire[9]
+        document.getElementById("cell11").innerHTML = nbAleatoire[10]
+        document.getElementById("cell12").innerHTML = nbAleatoire[11]
+        document.getElementById("cell13").innerHTML = nbAleatoire[12]
+        document.getElementById("cell14").innerHTML = nbAleatoire[13]
+        document.getElementById("cell15").innerHTML = nbAleatoire[14]
+        document.getElementById("cell16").innerHTML = nbAleatoire[15]
+        document.getElementById("cell17").innerHTML = nbAleatoire[16]
+        document.getElementById("cell18").innerHTML = nbAleatoire[17]
+        document.getElementById("cell19").innerHTML = nbAleatoire[18]
+        document.getElementById("cell20").innerHTML = nbAleatoire[19]
+
+
     }
+    
+    
+
     
 
 
+
+
+
+
+        
+
+    
+        
+
+    
     // TIMER 5 MIN 
     const timeH = document.querySelector("h2")
-    let timeSecond = 10
+    let timeSecond = 300
 
     displayTime(timeSecond)
 
@@ -176,22 +330,7 @@ function startGame(){
 
     function endtime(){
         timeH.innerHTML = "PARTIE TERMINÉ , VOUS AVEZ PERDU !"
-        document.getElementById("jeux2").style.display = "none"
-        document.getElementById("jeux3").style.display = "none"
-        document.getElementById("jeux4").style.display = "none"
-        document.getElementById("jeux5").style.display = "none"
-        document.getElementById("jeux6").style.display = "none"
-        document.getElementById("jeux7").style.display = "none"
-        document.getElementById("jeux8").style.display = "none"
-        document.getElementById("jeux9").style.display = "none"
-        document.getElementById("jeux10").style.display = "none"
+        document.getElementById("flex").style.display = "none"
+        
     }
-
-
-
 }
-
-
-
-
-

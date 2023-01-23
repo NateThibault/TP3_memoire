@@ -2,7 +2,7 @@
 
 body{
   background-color: black;
- 
+  width: 98.6%;
 }
 
 main {
@@ -26,13 +26,14 @@ header div {
 .formulaire{
   color: white;
   text-align: center;
-  margin-top: -650px;
+  margin-top: -750px;
   border-style: double;
   border-color: white;
   width: 350px;
   height: 350px;
-  margin-left: 760px;
+  margin-left: 880px;
   display: block;
+
 }
 
 .formulaire label{
@@ -71,29 +72,15 @@ header div {
   margin-bottom: -15px;
 }
 
-section{
+.timer{
   height: 100vh;
   width: 100%;
   margin-top: -115px;
 }
 
-.jeux2{
-  visibility: hidden;
-  color: white;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-top: -600px;
-}
 
-.jeux{
-  visibility: hidden;
-  color: white;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  margin-top: -600px;
-}
+
+
 
 #nom{
   text-align: center;
@@ -101,11 +88,27 @@ section{
   font-size: xx-large;
 }
 
-img{
-  width: 96px;
-  height: 96px;
-  margin-right: 10px;
+
+.flex{
+  color: rgb(255, 255, 255);
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -750px;
 }
 
+td {
+  border: 50px solid rgb(255, 255, 255);
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
 
+p{
+  visibility: hidden;
+  margin: 0;
+}
 
