@@ -1,4 +1,4 @@
-// Validation du fomrulaire
+// Validation du fomrulaire + declaration variable
 const nomJoueur = document.getElementById("nom")
 const prenom = document.getElementById("prenom")
 const nbPair = document.getElementById("pair")
@@ -6,7 +6,34 @@ const form = document.getElementById("form")
 const button = document.getElementById("go")
 const erreurNom = document.getElementById("erreurNom")
 const erreurPair = document.getElementById("erreurPair")
-const tableau = document.getElementById("flex")
+const cartes = document.querySelectorAll('.box')
+const boardGame = document.getElementById("boardGame")
+const temp = document.getElementById("temp")
+const gagner = document.getElementById("gagner")
+
+const box1 = document.getElementById("box1")
+const box2 = document.getElementById("box2")
+const box3 = document.getElementById("box3")
+const box4 = document.getElementById("box4")
+const box5 = document.getElementById("box5")
+const box6 = document.getElementById("box6")
+const box7 = document.getElementById("box7")
+const box8 = document.getElementById("box8")
+const box9 = document.getElementById("box9")
+const box10 = document.getElementById("box10")
+const box11 = document.getElementById("box11")
+const box12 = document.getElementById("box12")
+const box13 = document.getElementById("box13")
+const box14 = document.getElementById("box14")
+const box15 = document.getElementById("box15")
+const box16 = document.getElementById("box16")
+const box17 = document.getElementById("box17")
+const box18 = document.getElementById("box18")
+const box19 = document.getElementById("box19")
+const box20 = document.getElementById("box20")
+
+boardGame.style.visibility="hidden"
+temp.style.display="none"
 
 button.addEventListener("click" , (e) => {
 
@@ -34,282 +61,456 @@ button.addEventListener("click" , (e) => {
     if(prenom.value != parseInt(prenom.value) && prenom.value != "" && nbPair.value >= 2 && nbPair.value <= 10 ){
         return startGame()
     }
-    
-
 })
-
-
-tableau.style.visibility="hidden" // cacher le tableau de jeux 
 
 // STARTGAME 
 
 function startGame(){
 
-    document.getElementById("formulaire").style.display = "none"; // supprimer mon formulaire après validation
     nomJoueur.innerText = "Nom du joueur : " + prenom.value // affiche le nom du joueur
-    document.getElementById("nom").style.visibility="visible"
+    nomJoueur.style.visibility="visible"
+    form.style.visibility="hidden"
+    boardGame.style.visibility="visible"
+    temp.style.display="block"
 
 
+    if (nbPair.value == 2){
+        box5.remove()
+        box6.remove()
+        box7.remove()
+        box8.remove()
+        box9.remove()
+        box10.remove()
+        box11.remove()
+        box12.remove()
+        box13.remove()
+        box14.remove()
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+        let randomNum = Math.floor(Math.random() * 2);        
+        box.style.order = randomNum;
 
-    // Condition nombre de pair
-    if(nbPair.value == 2){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-
-        document.getElementById("t5").style.display = "none"
-        document.getElementById("t6").style.display = "none"
-        document.getElementById("t7").style.display = "none"
-        document.getElementById("t8").style.display = "none"
-        document.getElementById("t9").style.display = "none"
-        document.getElementById("t10").style.display = "none"
-        document.getElementById("t11").style.display = "none"
-        document.getElementById("t12").style.display = "none"
-        document.getElementById("t13").style.display = "none"
-        document.getElementById("t14").style.display = "none"
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-
-        
-
-    }
-
-    if(nbPair.value == 3){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("t7").style.display = "none"
-        document.getElementById("t8").style.display = "none"
-        document.getElementById("t9").style.display = "none"
-        document.getElementById("t10").style.display = "none"
-        document.getElementById("t11").style.display = "none"
-        document.getElementById("t12").style.display = "none"
-        document.getElementById("t13").style.display = "none"
-        document.getElementById("t14").style.display = "none"
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-
-    if(nbPair.value == 4){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("t9").style.display = "none"
-        document.getElementById("t10").style.display = "none"
-        document.getElementById("t11").style.display = "none"
-        document.getElementById("t12").style.display = "none"
-        document.getElementById("t13").style.display = "none"
-        document.getElementById("t14").style.display = "none"
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-    
-    if(nbPair.value == 5){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("t11").style.display = "none"
-        document.getElementById("t12").style.display = "none"
-        document.getElementById("t13").style.display = "none"
-        document.getElementById("t14").style.display = "none"
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-
-    if(nbPair.value == 6){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("cell11").innerHTML = nbAleatoire[10]
-        document.getElementById("cell12").innerHTML = nbAleatoire[11]
-        document.getElementById("t13").style.display = "none"
-        document.getElementById("t14").style.display = "none"
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-    
-    if(nbPair.value == 7){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("cell11").innerHTML = nbAleatoire[10]
-        document.getElementById("cell12").innerHTML = nbAleatoire[11]
-        document.getElementById("cell13").innerHTML = nbAleatoire[12]
-        document.getElementById("cell14").innerHTML = nbAleatoire[13]
-        document.getElementById("t15").style.display = "none"
-        document.getElementById("t16").style.display = "none"
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-
-    if(nbPair.value == 8){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("cell11").innerHTML = nbAleatoire[10]
-        document.getElementById("cell12").innerHTML = nbAleatoire[11]
-        document.getElementById("cell13").innerHTML = nbAleatoire[12]
-        document.getElementById("cell14").innerHTML = nbAleatoire[13]
-        document.getElementById("cell15").innerHTML = nbAleatoire[14]
-        document.getElementById("cell16").innerHTML = nbAleatoire[15]
-        document.getElementById("t17").style.display = "none"
-        document.getElementById("t18").style.display = "none"
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-    
-    if(nbPair.value == 9){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("cell11").innerHTML = nbAleatoire[10]
-        document.getElementById("cell12").innerHTML = nbAleatoire[11]
-        document.getElementById("cell13").innerHTML = nbAleatoire[12]
-        document.getElementById("cell14").innerHTML = nbAleatoire[13]
-        document.getElementById("cell15").innerHTML = nbAleatoire[14]
-        document.getElementById("cell16").innerHTML = nbAleatoire[15]
-        document.getElementById("cell17").innerHTML = nbAleatoire[16]
-        document.getElementById("cell18").innerHTML = nbAleatoire[17]
-        document.getElementById("t19").style.display = "none"
-        document.getElementById("t20").style.display = "none"
-    }
-
-    if(nbPair.value == 10){
-        tableau.style.visibility="visible"
-        const listeImage = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10]
-        const nbAleatoire = listeImage.sort(() => 0.5 - Math.random())
-        document.getElementById("cell1").innerHTML = nbAleatoire[0]
-        document.getElementById("cell2").innerHTML = nbAleatoire[1]
-        document.getElementById("cell3").innerHTML = nbAleatoire[2]
-        document.getElementById("cell4").innerHTML = nbAleatoire[3]
-        document.getElementById("cell5").innerHTML = nbAleatoire[4]
-        document.getElementById("cell6").innerHTML = nbAleatoire[5]
-        document.getElementById("cell7").innerHTML = nbAleatoire[6]
-        document.getElementById("cell8").innerHTML = nbAleatoire[7]
-        document.getElementById("cell9").innerHTML = nbAleatoire[8]
-        document.getElementById("cell10").innerHTML = nbAleatoire[9]
-        document.getElementById("cell11").innerHTML = nbAleatoire[10]
-        document.getElementById("cell12").innerHTML = nbAleatoire[11]
-        document.getElementById("cell13").innerHTML = nbAleatoire[12]
-        document.getElementById("cell14").innerHTML = nbAleatoire[13]
-        document.getElementById("cell15").innerHTML = nbAleatoire[14]
-        document.getElementById("cell16").innerHTML = nbAleatoire[15]
-        document.getElementById("cell17").innerHTML = nbAleatoire[16]
-        document.getElementById("cell18").innerHTML = nbAleatoire[17]
-        document.getElementById("cell19").innerHTML = nbAleatoire[18]
-        document.getElementById("cell20").innerHTML = nbAleatoire[19]
-
-
-    }
-    
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 2) setTimeout(() => partieGagner(), 10);
+                            
+                        } else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                        
+                    }
+                })
+            });
+        })
+    };
     
 
-    
+    if (nbPair.value == 3){
+        box7.remove()
+        box8.remove()
+        box9.remove()
+        box10.remove()
+        box11.remove()
+        box12.remove()
+        box13.remove()
+        box14.remove()
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 3);        
+            box.style.order = randomNum;
+
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 3) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 4){
+        box9.remove()
+        box10.remove()
+        box11.remove()
+        box12.remove()
+        box13.remove()
+        box14.remove()
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 4);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 4) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 5){
+        box11.remove()
+        box12.remove()
+        box13.remove()
+        box14.remove()
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 5);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 5) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 6){
+        box13.remove()
+        box14.remove()
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 6);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 6) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 7){
+        box15.remove()
+        box16.remove()
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 7);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 7) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+ 
+    if (nbPair.value == 8){
+        box17.remove()
+        box18.remove()
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 8);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 8) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 9){
+        box19.remove()
+        box20.remove()
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 9);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 9) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
+
+    if (nbPair.value == 10){
+        cartes.forEach(function(box) {
+            let randomNum = Math.floor(Math.random() * 10);        
+            box.style.order = randomNum;
+            
+            let premier
+            let deuxieme
+            let matchCounter = 0;
+            
+            cartes.forEach(function(box) {
+                box.addEventListener('click', function() {
+                    if (!premier && !deuxieme) {
+                        premier = box;
+                        box.classList.add('show');
+                    } else if (premier && !deuxieme) {
+                        deuxieme = box;
+                        box.classList.add('show');
+                        if (premier.innerHTML === deuxieme.innerHTML) {
+                            premier.style.pointerEvents = 'none';
+                            deuxieme.style.pointerEvents = 'none';
+                            premier = null;
+                            deuxieme = null;
+                            matchCounter++;
+                            if (matchCounter >= 10) setTimeout(() => partieGagner(), 10);
+                               
+                        } 
+                        else {
+                            setTimeout(() => {
+                                premier.classList.remove('show');
+                                deuxieme.classList.remove('show');
+                                premier = null;
+                                deuxieme = null;
+                            }, 1000);
+                        }
+                    }
+                })
+            });
+        });
+    }
 
 
-
-
-
-
-        
-
-    
-        
-
-    
     // TIMER 5 MIN 
     const timeH = document.querySelector("h2")
-    let timeSecond = 300
+    let timeSecond = 5
 
     displayTime(timeSecond)
 
@@ -329,8 +530,13 @@ function startGame(){
     }
 
     function endtime(){
+       
+        document.getElementById("boardGame").style.display = "none"
         timeH.innerHTML = "PARTIE TERMINÉ , VOUS AVEZ PERDU !"
-        document.getElementById("flex").style.display = "none"
-        
     }
+}
+
+function partieGagner(){
+    temp.remove()
+    gagner.innerHTML = "VOUS AVEZ GAGNÉ !!! "
 }

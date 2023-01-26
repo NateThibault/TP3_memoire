@@ -1,14 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
 
 
 body{
   background-color: black;
-  width: 98.6%;
+  width: 100%;
+  overflow: hidden
 }
 
 main {
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  width: 600px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100vh;
+  margin-top: -550px;
 }
 
 header div {
@@ -26,26 +35,22 @@ header div {
 .formulaire{
   color: white;
   text-align: center;
-  margin-top: -750px;
+  margin-top: -650px;
   border-style: double;
   border-color: white;
   width: 350px;
   height: 350px;
-  margin-left: 880px;
+  margin-left: 755px;
   display: block;
-
 }
 
 .formulaire label{
   font-size: xx-large;
-  
 }
 
 .formulaire input{
   padding: 10px;
-  margin-right: 15px ;
-  margin-top: 8px;
-  padding-right: 100px;
+ 
   
 }
 
@@ -79,9 +84,6 @@ header div {
 }
 
 
-
-
-
 #nom{
   text-align: center;
   margin-top:-50px;
@@ -89,26 +91,22 @@ header div {
 }
 
 
-.flex{
-  color: rgb(255, 255, 255);
-  align-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -750px;
+.box {
+  width: 110px;
+  height: 110px;
+  background-color: rgb(232, 232, 15);
+  color: transparent;
+  display: flex;
+  font-size: xx-large;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
-td {
-  border: 50px solid rgb(255, 255, 255);
-  background-color: white;
-  color: rgb(0, 0, 0);
-  font-size: 35px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-}
 
-p{
-  visibility: hidden;
-  margin: 0;
-}
 
+.show {
+ color:black
+}
