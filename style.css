@@ -2,8 +2,6 @@
   box-sizing: border-box;
 }
 
-
-
 body{
   background-color: black;
   width: 100%;
@@ -20,7 +18,7 @@ main {
   margin-top: -550px;
 }
 
-header div {
+header div{
   width: auto;
   height: 200px;
   margin: -21px;
@@ -32,6 +30,7 @@ header div {
   text-decoration:underline
 }
 
+
 .formulaire{
   color: white;
   text-align: center;
@@ -40,7 +39,7 @@ header div {
   border-color: white;
   width: 350px;
   height: 350px;
-  margin-left: 755px;
+  margin-left: 800px;
   display: block;
 }
 
@@ -50,8 +49,6 @@ header div {
 
 .formulaire input{
   padding: 10px;
- 
-  
 }
 
 .formulaire select{
@@ -90,6 +87,10 @@ header div {
   font-size: xx-large;
 }
 
+.message{
+  margin-top: -375px;
+}
+
 
 .box {
   width: 110px;
@@ -103,9 +104,18 @@ header div {
   justify-content: center;
   border: 1px solid black;
   cursor: pointer;
+  margin-top: -350px;
 }
 
+.gagner{
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: -550px;
+}
 
+.perdu{
+  margin-top: 150px;
+}
 
 .show {
  color:black

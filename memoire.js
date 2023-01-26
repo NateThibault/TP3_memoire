@@ -532,7 +532,9 @@ function startGame(){
     function endtime(){
        
         document.getElementById("boardGame").style.display = "none"
-        timeH.innerHTML = "PARTIE TERMINÉ , VOUS AVEZ PERDU !"
+        timeH.remove()
+        gagner.classList.add("perdu")
+        gagner.innerHTML = "TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!"
     }
 }
 

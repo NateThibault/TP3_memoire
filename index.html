@@ -10,23 +10,18 @@
 
     </head>
 
-    <body>
-              
+    <body>    
         <header>
             <div>
-                <text>JEUX DE MÉMOIRE</text>
-                
-            </div>   
-
-            
+                <text class="titre">JEUX DE MÉMOIRE</text>
+            </div>
 
             <section id="timer" class="timer">
                 <div class="container">
-                    <h2 id="temp">00:00</h2><h2 id="gagner"></h2>
+                    <h2 id="temp" class="temp">00:00</h2>
                 </div>
                  <strong><p id="nom"></p></strong>
             </section>
-           
         </header>
 
     
@@ -54,8 +49,6 @@
             </form>
         </div> 
         
-     
-
         <main id="boardGame">
             <div class="box" id="box1">1</div>
             <div class="box" id="box2">1</div>
@@ -79,9 +72,10 @@
             <div class="box" id="box20">10</div>
         </main>
 
-        
-        
+        <div class="message">
+            <h2 id="gagner" class="gagner"></h2>
+        </div>
+
         </script><script src="memoire.js"></script>
-     
     </body>
 </html>
