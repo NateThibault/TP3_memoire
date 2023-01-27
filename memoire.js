@@ -41,13 +41,13 @@ button.addEventListener("click" , (e) => {
     let messagePair = []
 
     if (prenom.value === "" || prenom.value == null) {
-        messageNom.push("*Votre nom est requis ! ")
+        messageNom.push("*Votre nom est requis")
     }
     if (prenom.value == parseInt(prenom.value)) {
-        messageNom.push("*Entrer seulement des lettres ! ")
+        messageNom.push("*Entrer seulement des lettres")
     }
     if (nbPair.value < 2 || nbPair.value > 10 ){
-        messagePair.push("*Entrer un nombre de pair entre 2 et 10 ! ")
+        messagePair.push("*Entrer un nombre de pair entre 2 et 10")
     }
     if(messageNom.length > 0) {
         e.preventDefault()
@@ -457,8 +457,8 @@ function startGame(){
                             setTimeout(() => {
                                 premier.classList.remove('show');
                                 deuxieme.classList.remove('show');
-                                premier = null;
-                                deuxieme = null;
+                                premier = null
+                                deuxieme = null
                             }, 1000);
                         }
                     }
@@ -469,36 +469,36 @@ function startGame(){
 
     if (nbPair.value == 10){
         cartes.forEach(function(box) {
-            let randomNum = Math.floor(Math.random() * 10);        
-            box.style.order = randomNum;
+            let randomNum = Math.floor(Math.random() * 10)      
+            box.style.order = randomNum
             
             let premier
             let deuxieme
-            let matchCounter = 0;
+            let matchCounter = 0
             
             cartes.forEach(function(box) {
                 box.addEventListener('click', function() {
                     if (!premier && !deuxieme) {
-                        premier = box;
-                        box.classList.add('show');
+                        premier = box
+                        box.classList.add('show')
                     } else if (premier && !deuxieme) {
-                        deuxieme = box;
-                        box.classList.add('show');
+                        deuxieme = box
+                        box.classList.add('show')
                         if (premier.innerHTML === deuxieme.innerHTML) {
-                            premier.style.pointerEvents = 'none';
-                            deuxieme.style.pointerEvents = 'none';
-                            premier = null;
-                            deuxieme = null;
-                            matchCounter++;
-                            if (matchCounter >= 10) setTimeout(() => partieGagner(), 10);
+                            premier.style.pointerEvents = 'none'
+                            deuxieme.style.pointerEvents = 'none'
+                            premier = null
+                            deuxieme = null
+                            matchCounter++
+                            if (matchCounter >= 10) setTimeout(() => partieGagner(), 10)
                                
                         } 
                         else {
                             setTimeout(() => {
-                                premier.classList.remove('show');
-                                deuxieme.classList.remove('show');
-                                premier = null;
-                                deuxieme = null;
+                                premier.classList.remove('show')
+                                deuxieme.classList.remove('show')
+                                premier = null
+                                deuxieme = null
                             }, 1000);
                         }
                     }
@@ -510,14 +510,14 @@ function startGame(){
 
     // TIMER 5 MIN 
     const timeH = document.querySelector("h2")
-    let timeSecond = 5
+    let tempTotal = 100
 
-    displayTime(timeSecond)
+    displayTime(tempTotal)
 
     const countDown = setInterval (()=>{
-        timeSecond--
-        displayTime(timeSecond)
-        if(timeSecond <= 0 || timeSecond < 1){
+        tempTotal--
+        displayTime(tempTotal)
+        if(tempTotal <= 0 || tempTotal < 1){
             endtime()
             clearInterval(countDown)
         }
@@ -530,15 +530,22 @@ function startGame(){
     }
 
     function endtime(){
-       
         document.getElementById("boardGame").style.display = "none"
         timeH.remove()
         gagner.classList.add("perdu")
         gagner.innerHTML = "TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!"
     }
+
+
+
+    function partieGagner(){
+        clearInterval(countDown)
+        temp.remove()
+        gagner.innerHTML = "VOUS AVEZ GAGNÉ !!! "
+    }
+
+
 }
 
-function partieGagner(){
-    temp.remove()
-    gagner.innerHTML = "VOUS AVEZ GAGNÉ !!! "
-}
+
+
