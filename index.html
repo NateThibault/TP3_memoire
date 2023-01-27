@@ -6,21 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Jeux de Mémoire</title>
-       
-
     </head>
 
     <body>    
         <header>
-            <div>
-                <text class="titre">JEUX DE MÉMOIRE</text>
-            </div>
-
+            <text class="titre">JEUX DE MÉMOIRE</text>
             <section id="timer" class="timer">
                 <div class="container">
                     <h2 id="temp" class="temp">00:00</h2>
                 </div>
-                 <strong><p id="nom" class="nom"></p></strong>
+                <strong><p id="nom" class="nom"></p></strong>
             </section>
         </header>
 
@@ -29,15 +24,15 @@
         <div id = "formulaire">
             <form class="formulaire" id="form" >
                 <div class = "inputPrenom">
-                    <label for="prenom">Prénom :</label><br>
+                    <br><label for="prenom"><strong>Prénom :</strong></label><br>
                     <input type="text" id="prenom" name="prenom"><br><br>
                 </div>
                 <div class="erreurNom" id="erreurNom"></div>
 
-                <br><br>
+                <br><br><br><br>
 
                 <div class="inputPair">
-                    <label for="pair">Nombre de pair (2 à 10):</label>
+                    <label for="pair"><strong>Nombre de paire de carte :</strong></label>
                     <input type="number" id="pair" name="pair">
                 </div>
                 <div class="erreurPair" id="erreurPair"></div> 
@@ -49,7 +44,7 @@
             </form>
         </div> 
         
-        <main id="boardGame">
+        <main id="boardGame" class="boardGame">
             <div class="box" id="box1">1</div>
             <div class="box" id="box2">1</div>
             <div class="box" id="box3">2</div>
@@ -75,6 +70,7 @@
         <div class="message">
             <h2 id="gagner" class="gagner"></h2>
         </div>
+        <button onClick="window.location.reload();" id="reset"><strong>RECOMMENCER</strong></button>
 
         </script><script src="memoire.js"></script>
     </body>
