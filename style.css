@@ -114,7 +114,7 @@ header div{
 }
 
 .message{
-  margin-top: -375px;
+  margin-top: -475px;
 }
 
 .titre{
@@ -158,12 +158,12 @@ header div{
 .gagner{
   color: green;
   text-align: center;
-  margin-top: -530px;
+  margin-top: -330px;
   font-size: 550%;
 }
 
 .perdu{
-  margin-top: 150px;
+  margin-top: -250px;
   font-size: 550%;
   color: rgb(255, 0, 0);
 }

@@ -513,7 +513,7 @@ function startGame () {
 
   // TIMER 5 MIN
   const timeH = document.querySelector('h2')
-  let tempTotal = 300
+  let tempTotal = 2
 
   displayTime(tempTotal)
 
@@ -533,7 +533,6 @@ function startGame () {
   }
 
   function endtime () {
-    document.getElementById('boardGame').style.display = 'none'
     timeH.remove()
     gagner.classList.add('perdu')
     gagner.innerHTML = 'TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!'
