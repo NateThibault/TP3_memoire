@@ -170,12 +170,14 @@ header div{
 
 .show {
  font-size: xx-large;
+ pointer-events:none;
 }
 
 .match{
   background-color: transparent;
   color: transparent;
-  border-color: transparent
+  border-color: transparent;
+  visibility: hidden;
 }
 
 .resetRed{
@@ -192,4 +194,10 @@ header div{
   margin: 0 auto;
   font-size: x-large;
   border-radius: 100%;
+}
+
+.createur{
+  color: white;
+  float:right;
+  margin-right: 100px;
 }

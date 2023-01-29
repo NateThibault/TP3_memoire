@@ -29,6 +29,8 @@ const box18 = document.getElementById('box18')
 const box19 = document.getElementById('box19')
 const box20 = document.getElementById('box20')
 
+const createur = {firstname: "Nathan", lastname: "Thibault" , Date:"Janvier 2023"} // Mon objet 
+
 boardGame.style.visibility = 'hidden'
 temp.style.display = 'none'
 recommencer.style.display= "none"
@@ -63,6 +65,8 @@ button.addEventListener('click', (e) => {
     return startGame()
   }
 })
+
+
 
 
 // STARTGAME
@@ -104,6 +108,7 @@ function startGame () {
           if (!premier && !deuxieme) {
             premier = box
             box.classList.add('show')
+            
           } else if (premier && !deuxieme) {
             deuxieme = box
             box.classList.add('show')
@@ -534,6 +539,7 @@ function startGame () {
     gagner.innerHTML = 'TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!'
     recommencer.classList.add("resetRed")
     recommencer.style.display= "block"
+    document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
   }
 
   function partieGagner () {
@@ -542,5 +548,6 @@ function startGame () {
     gagner.innerHTML = 'VOUS AVEZ GAGNÉ !!! '
     recommencer.classList.add("resetGreen")
     recommencer.style.display= "block"
+    document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
   }
 }
