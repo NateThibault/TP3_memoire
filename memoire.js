@@ -29,6 +29,11 @@ const box18 = document.getElementById('box18')
 const box19 = document.getElementById('box19')
 const box20 = document.getElementById('box20')
 
+const correct = document.getElementById("correct")
+const wrong = document.getElementById("wrong")
+const succes = document.getElementById("succes")
+const gameOver = document.getElementById("gameOver")
+
 const createur = {firstname: "Nathan", lastname: "Thibault" , Date:"Janvier 2023"} // Mon objet 
 
 boardGame.style.visibility = 'hidden'
@@ -80,8 +85,6 @@ function startGame () {
   boardGame.style.visibility = 'visible'
   temp.style.display = 'block'
 
-
-
   if (nbPair.value == 2) {
     box5.remove()
     box6.remove()
@@ -115,7 +118,6 @@ function startGame () {
           if (!premier && !deuxieme) {
             premier = box
             box.classList.add('show')
-            
           } else if (premier && !deuxieme) {
             deuxieme = box
             box.classList.add('show')
@@ -127,10 +129,12 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
 
               /** PERMET DE VÉRIFIER SI TOUTE LES CARTES ON ÉTÉ TIRER ET RÉUSSI */
               if (matchCounter >= 2) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -183,8 +187,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 3) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -235,8 +241,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 4) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -285,8 +293,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 5) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -333,8 +343,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 6) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -379,8 +391,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 7) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -423,8 +437,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 8) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -465,9 +481,11 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 9) setTimeout(() => partieGagner(), 10)
             } else {
-              setTimeout(() => {
+                jouerWrong()
+                setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
                 premier = null
@@ -505,8 +523,10 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+              jouerCorrect()
               if (matchCounter >= 10) setTimeout(() => partieGagner(), 10)
             } else {
+              jouerWrong()
               setTimeout(() => {
                 premier.classList.remove('show')
                 deuxieme.classList.remove('show')
@@ -522,7 +542,7 @@ function startGame () {
 
   
   const timeH = document.querySelector('h2')
-  let tempTotal = 10
+  let tempTotal = 300
 
   displayTime(tempTotal)
 
@@ -543,8 +563,8 @@ function startGame () {
   }
 
   /** LORSQUE LE TIMER ARRIVE À ÉCHÉANCE (PARTIE PERDU) */
-
   function endtime () {
+    jouerGameOver()
     timeH.remove()
     gagner.classList.add('perdu')
     boardGame.classList.add("verouillerBoardgame")
@@ -555,8 +575,8 @@ function startGame () {
   }
 
   /** LORSQUE TOUS LES CARTES SONT REVIRÉS DANS LE TEMPS RESPECTÉ (GAGNÉ LA PARTIE) */
-
   function partieGagner () {
+    jouerSucces()
     clearInterval(countDown)
     temp.remove()
     gagner.innerHTML = 'VOUS AVEZ GAGNÉ !!! '
@@ -564,4 +584,24 @@ function startGame () {
     recommencer.style.display= "block"
     document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
   }
+
+  /** je joue le bruit correct lorsque deux carte sont identiques */
+  function jouerCorrect(){
+    correct.play()
+  }
+
+  /** je joue le bruit wrong lorsque deux carte ne sont pas identiques */
+  function jouerWrong(){
+    wrong.play()
+  }
+
+  /** je joue le bruit succes lorsque jeux est fini et reussi */
+  function jouerSucces(){
+    succes.play()
+  }
+  /** je joue le bruit gameOver lorsque le temps est ecouler */
+  function jouerGameOver(){
+    gameOver.play()
+  }
+
 }
