@@ -35,6 +35,8 @@ boardGame.style.visibility = 'hidden'
 temp.style.display = 'none'
 recommencer.style.display= "none"
 
+
+/** VALIDATION DU FORMULAIRE AU DÉBUT AVANT LE JEUX */
 button.addEventListener('click', (e) => {
   const messageNom = []
   const messagePair = []
@@ -48,7 +50,7 @@ button.addEventListener('click', (e) => {
   }else{messageNom.push('')}
 
   if (nbPair.value < 2 || nbPair.value > 10) {
-    messagePair.push('*Entrer un nombre de pair entre 2 et 10')
+    messagePair.push('*Entrer un nombre de paire entre 2 et 10')
   }else{messagePair.push('')}
 
   if (messageNom.length > 0) {
@@ -69,7 +71,7 @@ button.addEventListener('click', (e) => {
 
 
 
-// STARTGAME
+/** LORSQUE LE FORMULAIRE EST VALIDE ET ENVOYÉ , LA TABLE DE JEUX APPARAÎT SELON LE NOMBRE DE PAIRE QUE L'UTILISATEUR AURA ENTRÉ */ 
 
 function startGame () {
   nomJoueur.innerText = 'Nom du joueur : ' + prenom.value 
@@ -77,6 +79,8 @@ function startGame () {
   form.style.visibility = 'hidden'
   boardGame.style.visibility = 'visible'
   temp.style.display = 'block'
+
+
 
   if (nbPair.value == 2) {
     box5.remove()
@@ -95,6 +99,8 @@ function startGame () {
     box18.remove()
     box19.remove()
     box20.remove()
+
+    /**PLACE ALÉATOIREMENT LES BOX DE MON HTML  */
     cartes.forEach(function (box) {
       const randomNum = Math.floor(Math.random() * 2)
       box.style.order = randomNum
@@ -103,6 +109,7 @@ function startGame () {
       let deuxieme
       let matchCounter = 0
 
+      /**PERMET DE RETOURNER 2 CARTES ET FAIT LA VALIDATION DES DEUX VALEURS. SI VALEUR #1 EST DIFFÉRENTE DE VALEUR #2, APRES 1 SECONDE LES CARTES SE CHACHENT*/
       cartes.forEach(function (box) {
         box.addEventListener('click', function () {
           if (!premier && !deuxieme) {
@@ -120,6 +127,8 @@ function startGame () {
               premier = null
               deuxieme = null
               matchCounter++
+
+              /** PERMET DE VÉRIFIER SI TOUTE LES CARTES ON ÉTÉ TIRER ET RÉUSSI */
               if (matchCounter >= 2) setTimeout(() => partieGagner(), 10)
             } else {
               setTimeout(() => {
@@ -511,9 +520,9 @@ function startGame () {
     })
   }
 
-  // TIMER 5 MIN
+  
   const timeH = document.querySelector('h2')
-  let tempTotal = 2
+  let tempTotal = 10
 
   displayTime(tempTotal)
 
@@ -526,20 +535,26 @@ function startGame () {
     }
   }, 1000)
 
+  /** CONVERTI EN MINUTE LE tempTotal ET L'AFFICHE DANS LA PAGE  */
   function displayTime (second) {
     const min = Math.floor(second / 60)
     const sec = Math.floor(second % 60)
     timeH.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`
   }
 
+  /** LORSQUE LE TIMER ARRIVE À ÉCHÉANCE (PARTIE PERDU) */
+
   function endtime () {
     timeH.remove()
     gagner.classList.add('perdu')
+    boardGame.classList.add("verouillerBoardgame")
     gagner.innerHTML = 'TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!'
     recommencer.classList.add("resetRed")
     recommencer.style.display= "block"
     document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
   }
+
+  /** LORSQUE TOUS LES CARTES SONT REVIRÉS DANS LE TEMPS RESPECTÉ (GAGNÉ LA PARTIE) */
 
   function partieGagner () {
     clearInterval(countDown)

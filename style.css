@@ -36,16 +36,16 @@ header div{
 }
 
 .formulaire{
-  color: rgb(0, 0, 0);
+  color: orange;
   text-align: center;
   margin-top: -650px;
   border-style: groove;
   border-color: rgb(255, 255, 255);
-  width: 390px;
-  height: 400px;
-  margin-left: 770px;
+  width: 425px;
+  height: 425px;
+  margin-left: 740px;
   display: block;
-  background-image: url("img/form.gif");
+  background-image: url("img/trouNoir.gif");
   background-size:cover
 }
 
@@ -65,7 +65,7 @@ header div{
 }
 
 .go{
-  background-color: #4CAF50; /* Green */
+  background-color: orange; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -96,7 +96,7 @@ header div{
 }
 
 .inputPair{
-  color: black;
+  color: orange;
   text-decoration: underline;
 }
 
@@ -126,13 +126,16 @@ header div{
   justify-content: center;
   align-items: center;
   color: white;
-  font-size:250%;
+  font-size:450%;
   text-decoration:underline;
 }
 
 .nom{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
+}
+.prenom,.labelPair{
+  background-color: black;
 }
 
 .temp{
@@ -200,4 +203,9 @@ header div{
   color: white;
   float:right;
   margin-right: 100px;
+  margin-top: initial;
+}
+
+.verouillerBoardgame{
+  pointer-events:none;
 }
