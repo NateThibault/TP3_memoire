@@ -6,9 +6,10 @@ body{
   background-color: black;
   width: 100%;
   overflow: hidden;
-  background-image: url("img/space.gif");
-  background-size: cover;
-  
+  background-image: url("img/back.gif");
+  background-repeat: no-repeat;
+  background-size: 1920px 1500px;
+  background-position-y: center
 }
 
 main {
@@ -19,34 +20,30 @@ main {
   width: auto;
   height: 100vh;
   margin-top: -550px;
-  
 }
 
 header div{
-  width: auto;
+  width: 10px;
   height: 180px;
   margin: -21px;
   display: flex;
   justify-content: center;
-  align-items: center;
   color: white;
   font-size:250%;
   text-decoration:underline;
-  background-image: url("img/space.gif");
-  background-size: cover;
 }
 
 .formulaire{
-  color: orange;
+  color: black;
   text-align: center;
-  margin-top: -650px;
+  margin-top: -675px;
   border-style: groove;
   border-color: rgb(255, 255, 255);
-  width: 425px;
+  width: 450px;
   height: 425px;
   margin-left: 740px;
   display: block;
-  background-image: url("img/trouNoir.gif");
+  background-image: url("img/mario.gif");
   background-size:cover
 }
 
@@ -66,7 +63,7 @@ header div{
 }
 
 .go{
-  background-color: orange; 
+  background-color: green; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -92,19 +89,19 @@ header div{
 
 .inputPrenom{
   margin-bottom: -15px;
-  text-decoration: underline;
-  
 }
 
 .inputPair{
-  color: orange;
-  text-decoration: underline;
+  color: black;
+  
 }
 
+.labelPair,.labelprenom{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 
 .timer{
   height: 100vh;
-  width: 100%;
   margin-top: -115px;
 }
 
@@ -119,7 +116,7 @@ header div{
 }
 
 .titre{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   width: auto;
   height: 180px;
   margin: -21px;
@@ -135,13 +132,11 @@ header div{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
 }
-.prenom,.labelPair{
-  background-color: black;
-}
 
 .temp{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color:red
+  color:red;
+  margin-left: 1940px;
 }
 
 .box {
@@ -185,19 +180,41 @@ header div{
 }
 
 .resetRed{
-  background-color: red ;
-  width: 15%;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px rgb(0, 0, 0);
   margin: 0 auto;
-  font-size: x-large;
-  border-radius: 100%;
+}
+
+.resetRed:hover{
+  background-color: rgb(122, 4, 4)
 }
 
 .resetGreen{
-  background-color:green ;
-  width: 15%;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px rgb(0, 0, 0);
   margin: 0 auto;
-  font-size: x-large;
-  border-radius: 100%;
+}
+
+.resetGreen:hover{
+  background-color:rgb(2, 91, 2)
 }
 
 .createur{

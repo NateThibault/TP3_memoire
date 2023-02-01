@@ -585,23 +585,22 @@ function startGame () {
     document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
   }
 
-  /** je joue le bruit correct lorsque deux carte sont identiques */
+  /** joue le bruit correct lorsque deux carte sont identiques */
   function jouerCorrect(){
     correct.play()
   }
 
-  /** je joue le bruit wrong lorsque deux carte ne sont pas identiques */
+  /** joue le bruit wrong lorsque deux carte ne sont pas identiques */
   function jouerWrong(){
     wrong.play()
   }
 
-  /** je joue le bruit succes lorsque jeux est fini et reussi */
+  /** joue le bruit succes lorsque jeux est fini et reussi */
   function jouerSucces(){
     succes.play()
   }
-  /** je joue le bruit gameOver lorsque le temps est ecouler */
+  /** joue le bruit gameOver lorsque le temps est ecouler */
   function jouerGameOver(){
     gameOver.play()
   }
-
 }
