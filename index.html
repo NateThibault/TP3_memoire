@@ -40,7 +40,7 @@
         <div id = "formulaire">
             <form class="formulaire" id="form" >
                 <div class = "inputPrenom">
-                    <br><label for="prenom"><strong class="labelprenom">Prénom :</strong></label><br>
+                    <br><label for="prenom"><strong class="labelprenom">Prénom:</strong></label><br>
                     <input type="text" id="prenom" name="prenom"><br><br>
                 </div>
                 <div class="erreurNom" id="erreurNom"></div>
@@ -48,7 +48,7 @@
                 <br><br><br><br>
 
                 <div class="inputPair">
-                    <label for="pair"><strong class="labelPair">Nombre de paire de carte :</strong></label>
+                    <label for="pair"><strong class="labelPair">Nombre de paires:</strong></label>
                     <input type="number" id="pair" name="pair">
                 </div>
                 <div class="erreurPair" id="erreurPair"></div> 
@@ -61,31 +61,33 @@
         </div> 
         
         <main id="boardGame" class="boardGame">
-            <div class="box" id="box1">1</div>
-            <div class="box" id="box2">1</div>
-            <div class="box" id="box3">2</div>
-            <div class="box" id="box4">2</div>
-            <div class="box" id="box5">3</div>
-            <div class="box" id="box6">3</div>
-            <div class="box" id="box7">4</div>
-            <div class="box" id="box8">4</div>
-            <div class="box" id="box9">5</div>
-            <div class="box" id="box10">5</div>
-            <div class="box" id="box11">6</div>
-            <div class="box" id="box12">6</div>
-            <div class="box" id="box13">7</div>
-            <div class="box" id="box14">7</div>
-            <div class="box" id="box15">8</div>
-            <div class="box" id="box16">8</div>
-            <div class="box" id="box17">9</div>
-            <div class="box" id="box18">9</div>
-            <div class="box" id="box19">10</div>
-            <div class="box" id="box20">10</div>
+            <div class="box" id="defaultBox">♦</div>
+            <div class="box" id="defaultBox">♦</div>
+            <div class="box" id="defaultBox">☻</div>
+            <div class="box" id="defaultBox">☻</div>
+            <div class="box" id="box0">♥</div>
+            <div class="box" id="box1">♥</div>
+            <div class="box" id="box2">☺</div>
+            <div class="box" id="box3">☺</div>
+            <div class="box" id="box4">♣</div>
+            <div class="box" id="box5">♣</div>
+            <div class="box" id="box6">♠</div>
+            <div class="box" id="box7">♠</div>
+            <div class="box" id="box8">♪</div>
+            <div class="box" id="box9">♪</div>
+            <div class="box" id="box10">♫</div>
+            <div class="box" id="box11">♫</div>
+            <div class="box" id="box12">☼</div>
+            <div class="box" id="box13">☼</div>
+            <div class="box" id="box14">©</div>
+            <div class="box" id="box15">©</div>
         </main>
+
+       
 
         <div class="message">
             <h2 id="gagner" class="gagner"></h2>
-            
+             
         </div>
         
         <button onClick="window.location.reload();" id="reset"><strong>RECOMMENCER</strong></button>
