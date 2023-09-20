@@ -30,12 +30,12 @@ button.addEventListener('click', (e) => {
   const messageNom = []
   const messagePair = []
 
-  if (prenom.value == '' || prenom.value == null || prenom.value.length < 2) {
-    messageNom.push('*Votre nom est requis avec minimum 2 lettres')
+  if (prenom.value == '' || prenom.value == null || prenom.value.length < 2 || prenom.value.length > 10) {
+    messageNom.push('* Votre nom est requis avec minimum de 2 lettres et un maximum de 10')
   }else{messageNom.push('')}
 
   if (nbPair.value < 2 || nbPair.value > 10) {
-    messagePair.push('*Entrer un nombre de paire entre 2 et 10')
+    messagePair.push('* Entrer un nombre entre 2 et 10')
   }else{messagePair.push('')}
 
   if (messageNom.length > 0) {
@@ -48,7 +48,7 @@ button.addEventListener('click', (e) => {
     erreurPair.innerText = messagePair.join('')
   }
 
-  if (prenom.value != '' && nbPair.value >= 2 && nbPair.value <= 10 && prenom.value.length >= 2) {
+  if (prenom.value != '' && nbPair.value >= 2 && prenom.value.length <= 10 && nbPair.value <= 10 && prenom.value.length >= 2) {
     return startGame()
   }
 })
@@ -129,7 +129,35 @@ function startGame () {
   
  /* It's a timer 300 sec (5 min). */
   const timeH = document.querySelector('h2')
-  let tempTotal = 300
+  let tempTotal 
+  
+  if (nbPair.value == 2){
+    tempTotal = 30
+  }
+  else if (nbPair.value == 3){
+    tempTotal = 45
+  }
+  else if (nbPair.value == 4){
+    tempTotal = 60
+  }
+  else if (nbPair.value == 5){
+    tempTotal = 75
+  }
+  else if (nbPair.value == 6){
+    tempTotal = 90
+  }
+  else if (nbPair.value == 7){
+    tempTotal = 105
+  }
+  else if (nbPair.value == 8){
+    tempTotal = 120
+  }
+  else if (nbPair.value == 9){
+    tempTotal = 135
+  }
+  else if (nbPair.value == 10){
+    tempTotal = 150
+  }
 
   displayTime(tempTotal)
 
@@ -166,7 +194,7 @@ function startGame () {
     jouerGameOver()
     timeH.remove()
     gagner.classList.add('perdu')
-    boardGame.classList.add("verouillerBoardgame")
+    boardGame.style.display = 'none'
     gagner.innerHTML = 'TEMPS ÉCOULÉ, VOUS AVEZ PERDU !!!'
     recommencer.classList.add("resetRed")
     recommencer.style.display= "block"
@@ -181,12 +209,12 @@ function startGame () {
     jouerSucces()
     clearInterval(countDown)
     temp.remove()
+    boardGame.style.display = 'none'
     gagner.innerHTML = 'VOUS AVEZ GAGNÉ !!! '
     recommencer.classList.add("resetGreen")
     recommencer.style.display= "block"
     main.display = "none"
     document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
-    fireworks()
   }
   
  /**
@@ -217,4 +245,5 @@ function startGame () {
   function jouerGameOver(){
     gameOver.play()
   }
+
 }
