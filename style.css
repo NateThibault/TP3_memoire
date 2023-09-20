@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: SeizeBit;
   src: url(Font/PressStart2P-Regular.ttf);
   font-weight: bold;
@@ -254,4 +254,241 @@ header div{
 .verouillerBoardgame{
   pointer-events:none;
 }
+*/
 
+
+
+
+
+/* Styles pour les écrans de bureau (desktop) */
+@font-face {
+  font-family: SeizeBit;
+  src: url(Font/PressStart2P-Regular.ttf);
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  width: auto;
+  background-image: url("img/back.gif");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la zone d'arrière-plan */
+  background-attachment: fixed;
+  background-position: center;
+}
+
+main {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+
+.formulaire {
+  width: 100%;
+  max-width: 600px; /* Largeur maximale pour une meilleure lisibilité */
+  margin: auto; /* Centre le formulaire horizontalement */
+  text-align: left; /* Réinitialise le centrage du texte */
+  padding: 20px; /* Ajoute un peu d'espace intérieur */
+  background-color: #f26828;
+  background-size: cover;
+  border-radius: 10px; /* Arrondi les coins */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1); /* Ajoute une légère ombre */
+}
+
+/* Style des champs de texte et des sélecteurs */
+.formulaire input,
+.formulaire select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px; /* Espacement entre les champs */
+  border: 1px solid #ccc; /* Ajoute une bordure légère */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style du bouton de soumission */
+.formulaire .go {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: green;
+}
+
+.box{
+  width: calc(20% - 200px);
+  height: 150px; /* Vous pouvez ajuster la hauteur selon vos préférences */
+  margin: 5px; /* Espacement entre les boîtes */
+  background-color: rgb(255, 255, 255);
+  background-image: url("img/carte.gif");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la zone d'arrière-plan */
+  background-position: center;
+  display: flex;
+  font-size: 0px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+
+
+.show {
+  font-size: 80px;
+  text-align: center;
+  pointer-events:none;
+  background-image: none;
+}
+
+.match{
+  background-color: transparent;
+  background-image: none;
+  color: transparent;
+  border-color: transparent;
+  visibility: hidden;
+}
+
+.timer{
+  margin: 0 auto;
+  text-align: center;
+}
+.temp{
+  font-family: seizeBit;
+  color:red;
+  margin: 0 auto ;
+  font-size: 80px;
+}
+
+#nom{
+  text-align: center;
+  font-size: 300%;
+  font-family: seizeBit;
+  color: #6C9AFC
+}
+
+.gagner{
+  color: rgb(15, 174, 15);
+  text-align: center;
+  font-size: 450%;
+  font-family: seizeBit;
+}
+
+.perdu{
+  margin-top: -500px;
+  font-size: 300%;
+  color: rgb(255, 0, 0);
+  font-family: seizeBit;
+}
+
+.verouillerBoardgame{
+  pointer-events:none;
+}
+
+/* Styles pour les appareils mobiles */
+@media (max-width: 768px) {
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+    
+  }
+
+  .box {
+    width: calc(33.33% - 10px); /* 3 boîtes par ligne avec un espacement de 10px entre elles */
+    height: 120px; /* Vous pouvez ajuster la hauteur selon vos préférences */
+    margin: 5px; /* Espacement entre les boîtes */
+  }
+
+  header div {
+    font-size: 150%; /* Ajustez la taille de la police pour les mobiles */
+  }
+
+  .formulaire {
+    width: 100%; /* Remplacez la largeur fixe par 100% pour s'adapter aux mobiles */
+    margin-left: 0; /* Supprimez la marge gauche pour s'adapter aux mobiles */
+  }
+
+  .formulaire input,
+  .formulaire select {
+    width: 100%; /* Ajustez la largeur des champs de formulaire pour les mobiles */
+    margin: 10px 0; /* Ajoutez un espace entre les champs de formulaire pour les mobiles */
+  }
+
+  .go {
+    width: 100%; /* Ajustez la largeur du bouton "GO" pour les mobiles */
+    font-size: 24px; /* Ajustez la taille de la police pour les mobiles */
+  }
+
+  .labelPair,
+  .labelprenom {
+    font-size: 120%; /* Ajustez la taille de la police des étiquettes pour les mobiles */
+    margin-left: 0; /* Supprimez la marge gauche pour s'adapter aux mobiles */
+  }
+
+  #nom {
+    font-size: 200%; /* Ajustez la taille de la police pour les mobiles */
+    margin-top: -30px; /* Ajustez la marge supérieure pour les mobiles */
+  }
+
+  .gagner {
+    font-size: 200%; /* Ajustez la taille de la police pour les mobiles */
+    margin-top: -400px; /* Ajustez la marge supérieure pour les mobiles */
+  }
+
+  .perdu {
+    font-size: 150%; /* Ajustez la taille de la police pour les mobiles */
+    margin-top: -350px; /* Ajustez la marge supérieure pour les mobiles */
+  }
+
+  .resetRed,
+  .resetGreen {
+    font-size: 16px; /* Ajustez la taille de la police des boutons pour les mobiles */
+    padding: 10px 20px; /* Ajustez la taille des boutons pour les mobiles */
+    margin-top: -30px; /* Ajustez la marge supérieure pour les mobiles */
+  }
+
+  .resetRed:hover{
+    background-color: rgb(122, 4, 4)
+  }
+  
+  
+  .resetGreen:hover{
+    background-color:rgb(2, 91, 2)
+  }
+
+  .createur {
+    margin-right: 20px; /* Ajustez la marge droite pour les mobiles */
+    font-size: 14px; /* Ajustez la taille de la police pour les mobiles */
+  }
+
+  .show {
+    font-size: 80px;
+    text-align: center;
+    pointer-events:none;
+    background-image: none;
+  }
+   
+  .match{
+    background-color: transparent;
+    background-image: none;
+    color: transparent;
+    border-color: transparent;
+    visibility: hidden;
+  }
+}

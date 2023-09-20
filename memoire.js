@@ -18,7 +18,7 @@ const succes = document.getElementById("succes")
 const gameOver = document.getElementById("gameOver")
 const createur = {firstname: "Nathan", lastname: "Thibault" , Date:"Janvier 2023"} // Mon objet 
 
-boardGame.style.visibility = 'hidden'
+boardGame.style.display = 'none'
 temp.style.display = 'none'
 recommencer.style.display= "none"
 
@@ -66,10 +66,10 @@ function getBoxes(){
  * It's a function that starts the game
  */
 function startGame () {
+  boardGame.style.display = 'flex'
   nomJoueur.innerText =  prenom.value 
   nomJoueur.style.visibility = 'visible'
-  form.style.visibility = 'hidden'
-  boardGame.style.visibility = 'visible'
+  form.style.display = 'none'
   temp.style.display = 'block'
 
   getBoxes()
@@ -184,6 +184,7 @@ function startGame () {
     gagner.innerHTML = 'VOUS AVEZ GAGNÉ !!! '
     recommencer.classList.add("resetGreen")
     recommencer.style.display= "block"
+    main.display = "none"
     document.getElementById("createur").innerHTML = createur.firstname + " " + createur.lastname +  "<br/>" + createur.Date
     fireworks()
   }
